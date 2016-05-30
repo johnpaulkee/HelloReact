@@ -77,6 +77,7 @@ ReactDOM.render(
 
 // When do you use props vs states?
 
+// Presentational components vs. Stateful components
 
 // It's best to make static versions first and then
 // make them dynamic after
