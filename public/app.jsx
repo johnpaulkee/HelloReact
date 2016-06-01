@@ -18,9 +18,16 @@ var GreeterForm = React.createClass({
   onFormSubmit: function (e) {
     e.preventDefault();
     var name = this.refs.name.value;
+    var message = this.refs.message.value;
+
     if (name.length > 0 && name.trim()) {
       this.refs.name.value = '';
       this.props.onNewName(name);
+    }
+
+    if (message.length > 0 && message.trim()) {
+      this.refs.message.value = '';
+      this.props.onNewMessage(message);
     }
   },
   render: function() {
@@ -47,7 +54,8 @@ var Greeter = React.createClass({
   },
   getInitialState: function() {
     return {
-      name: this.props.name
+      name: this.props.name,
+      message: this.props.message
     };
   },
   // Receives the name from presentational component
@@ -56,15 +64,20 @@ var Greeter = React.createClass({
       name: name
     });
   },
+  handleNewMessage: function(message) {
+    this.setState({
+      message: message
+    });
+  },
   render: function() {
     var name = this.state.name;
-    var message = this.props.message;
+    var message = this.state.message;
 
     return (
       <div className = "jumbotron">
         <div className = "container">
           <GreeterMessage name={name} message={message}/>
-          <GreeterForm onNewName={this.handleNewName}/>
+          <GreeterForm onNewName={this.handleNewName} onNewMessage={this.handleNewMessage}/>
         </div>
       </div> // You must return one root element
     );
