@@ -85,3 +85,8 @@ ReactDOM.render(
 // Single responsibility principle
 // Components can get large and complex
 // By breaking things up, we can make better apps with more functionality and less complexity
+
+// Updating props doesn't work with react.
+// You can only update states
+// You can pass functions thorugh element attributes
+// You must have one root element, and the only thing that gets rendered is the child elements.
