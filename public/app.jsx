@@ -12,7 +12,7 @@ var GreeterMessage = React.createClass({
   }
 });
 
-// Presentational Component - Greeter Form is a component that provides a form for the Greeter, submission functionality and all.
+// Presentational Component - Greeter Form is a component that provides a form for the Greeter, submission functionality and all</div>.
 // Responds to user input
 var GreeterForm = React.createClass({
   onFormSubmit: function (e) {
@@ -57,9 +57,11 @@ var Greeter = React.createClass({
     var message = this.props.message;
 
     return (
-      <div>
-        <GreeterMessage name={name} message={message}/>
-        <GreeterForm onNewName={this.handleNewName}/>
+      <div className = "jumbotron">
+        <div className = "container">
+          <GreeterMessage name={name} message={message}/>
+          <GreeterForm onNewName={this.handleNewName}/>
+        </div>
       </div> // You must return one root element
     );
   }
